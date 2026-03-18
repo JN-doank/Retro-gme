@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang=id>
+<head>
+<meta charset=UTF-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<title>MweheheXcode</title>
+<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel=stylesheet>
+<link rel=stylesheet href="style.css">
+</head>
+<body>
+<div class=container>
+<img src=https://media1.tenor.com/m/n-i-XptlsdMAAAAd/cute-bunny.gif alt=MweheheXcode class=header-gif>
+<h1 class=header>&lt;/&gt; Coded By <span style=color:#666>./</span><span id=scramble-text>MweheheXcode</span> &lt;/&gt;</h1>
+<span class=quote>"We are just a shadow in the digital crowd."</span>
+<div class=greet-row>
+<audio id=myAudio loop><source src=https://d.top4top.io/m_3703mige90.mp3 type=audio/mpeg></audio>
+<button class=btn-action onclick=togglePlay()><i id=musicIcon class="fas fa-play"></i> MUSIC</button>
+<button class=btn-action onclick='toggleModal("menuModal")'><i class="fas fa-gamepad"></i> GAMES MENU</button>
+<button class=btn-action onclick=toggleTheme()><i id=themeIcon class="fas fa-moon"></i> MODE</button>
+</div>
+<div class=marquee-wrapper>
+<div class=marquee-container>
+<div class=marquee-text>
+!Fakesite - Doys_404 - Anon_lx02 - Fakesec666 - Iethesia - SukaKamu01 - MweheheXcode - violetXploid Qyuraa - Enter666x - NoFace999 - Lanzz - Xzuvuww - XybaXploite - RommyXploit - Vurex - Dandier - Xstroven - BigBoy - AgenMassive - KingArtur - IvanApolloyon - Amirxploite - Machfood - Rsyiddz - Fedup_404 - UniCorn - Izunasec - VinzXploit - HanJsXploit
+</div>
+</div>
+</div>
+<a href=mailto:mwehehe23@proton.me class=email>mwehehecode23@proton.me</a>
+</div>
+<div id=menuModal class=modal>
+<div class=modal-header>
+<span>SELECT GAME</span><span onclick='toggleModal("menuModal")' style=cursor:pointer>[X]</span>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+<button class=btn-action onclick='openGame("gameModal")'><i class="fas fa-hashtag"></i> XOX</button>
+<button class=btn-action onclick='openGame("pongModal")'><i class="fas fa-table-tennis-paddle-ball"></i> PONG</button>
+<button class=btn-action onclick='openGame("dinoModal")'><i class="fas fa-ghost"></i> PAC-MAN RUN</button>
+<button class=btn-action onclick='openGame("birdModal")'><i class="fas fa-dove"></i> BIRD</button>
+<button class=btn-action onclick='openGame("snakeModal")'><i class="fas fa-staff-snake"></i> SNAKE</button>
+<button class=btn-action onclick='openGame("catchModal")'><i class="fas fa-hand-holding-heart"></i> CATCH</button>
+<button class=btn-action onclick='openGame("memoryModal")'><i class="fas fa-brain"></i> MEMORY</button>
+<button class=btn-action onclick='openGame("brickModal")'><i class="fas fa-th"></i> BRICKS</button>
+<button class=btn-action onclick='openGame("modal2048")'><i class="fas fa-cubes"></i> 2048</button>
+<button class=btn-action><i class="fas fa-ghost"></i> PAC-MAN</button>
+<button class=btn-action><i class="fas fa-table"></i> SUDOKU</button>
+<button class=btn-action onclick='toggleModal("simonModal")'><i class="fas fa-gamepad"></i> NEON PATTERN</button>
+<button class=btn-action onclick=openMinesweeper()><i class="fas fa-bomb"></i> MINESWEEPER</button>
+<button class=btn-action onclick=openBurst()><i class="fas fa-bolt"></i> DIGIT BURST</button>
+<button class=btn-action onclick=openDam()>
+<i class="fas fa-chess-board"></i> STRATEGY DAM </button>
+<button class=btn-action onclick=openStackGame()>
+<i class="fas fa-layer-group"></i> TOWER STACK </button>
+</div>
+</div>
+<div id=modal2048 class=modal>
+<div class=modal-header>
+<span>CYBER 2048</span><span onclick='toggleModal("modal2048")' style=cursor:pointer>[X]</span>
+</div>
+<div id=grid2048 class=grid-2048></div>
+<button class=reset-btn onclick=init2048()>NEW GAME</button>
+<p style="font-size:.6rem;margin-top:10px;font-family:'JetBrains Mono'">Swipe or Use Arrows to Move</p>
+</div>
+<div id=brickModal class=modal>
+<div class=modal-header>
+<span>BRICKS</span><span onclick='stopAllGames(),toggleModal("brickModal")' style=cursor:pointer>[X]</span>
+</div>
+<canvas id=brickCanvas width=280 height=250></canvas><button id=startBrickBtn class=reset-btn onclick=startBrick()>START</button>
+</div>
+<div id=pongModal class=modal>
+<div class=modal-header>
+<span>PONG vs AI</span><span onclick='stopAllGames(),toggleModal("pongModal")' style=cursor:pointer>[X]</span>
+</div>
+<canvas id=pongCanvas width=280 height=250></canvas><button id=startPongBtn class=reset-btn onclick=startPong()>START</button>
+</div>
+<div id=snakeModal class=modal>
+<div class=modal-header>
+<span>SNAKE</span><span onclick='stopAllGames(),toggleModal("snakeModal")' style=cursor:pointer>[X]</span>
+</div>
+<canvas id=snakeCanvas width=280 height=180></canvas>
+<div class=snake-ctrl>
+<div></div>
+<button class=btn-action onclick=changeSnakeDir(0,-1)><i class="fas fa-chevron-up"></i></button>
+<div></div>
+<button class=btn-action onclick=changeSnakeDir(-1,0)><i class="fas fa-chevron-left"></i></button><button class=btn-action id=startSnakeBtn onclick=startSnake()><i class="fas fa-play"></i></button><button class=btn-action onclick=changeSnakeDir(1,0)><i class="fas fa-chevron-right"></i></button>
+<div></div>
+<button class=btn-action onclick=changeSnakeDir(0,1)><i class="fas fa-chevron-down"></i></button>
+<div></div>
+</div>
+</div>
+<div id=catchModal class=modal>
+<div class=modal-header>
+<span>CATCH BUG</span><span onclick='stopAllGames(),toggleModal("catchModal")' style=cursor:pointer>[X]</span>
+</div>
+<canvas id=catchCanvas width=280 height=250></canvas><button id=startCatchBtn class=reset-btn onclick=startCatch()>START</button>
+</div>
+<div id=memoryModal class=modal>
+<div class=modal-header>
+<span>MEMORY</span><span onclick='stopAllGames(),toggleModal("memoryModal")' style=cursor:pointer>[X]</span>
+</div>
+<div id=memoryGrid class=memory-grid></div>
+<button class=reset-btn onclick=initMemory()>RESET</button>
+</div>
+<div id=gameModal class=modal>
+<div class=modal-header>
+<span>XOX</span><span onclick='toggleModal("gameModal")' style=cursor:pointer>[X]</span>
+</div>
+<div class=game-grid>
+<div class=cell onclick=makeMove(0)></div>
+<div class=cell onclick=makeMove(1)></div>
+<div class=cell onclick=makeMove(2)></div>
+<div class=cell onclick=makeMove(3)></div>
+<div class=cell onclick=makeMove(4)></div>
+<div class=cell onclick=makeMove(5)></div>
+<div class=cell onclick=makeMove(6)></div>
+<div class=cell onclick=makeMove(7)></div>
+<div class=cell onclick=makeMove(8)></div>
+</div>
+<button class=reset-btn onclick=resetGame()>RESET</button>
+</div>
+<div id=dinoModal class=modal>
+<div class=modal-header>
+<span>PAC-JUMP SYSTEM</span>
+<div style=display:flex;gap:15px;align-items:center>
+<i class="fas fa-cog" style=cursor:pointer;font-size:.9rem onclick=toggleCharMenu()></i>
+<span style=cursor:pointer onclick='toggleModal("dinoModal")'>X</span>
+</div>
+</div>
+<div id=charOverlay style="display:none;position:absolute;top:50px;left:20px;right:20px;background:var(--bg);border:2px solid var(--border);padding:15px;z-index:1001;box-shadow:8px 8px 0 var(--border)">
+<p style="font-size:.65rem;margin-bottom:12px;font-family:'JetBrains Mono';font-weight:700;text-transform:uppercase">Select Agent:</p>
+<div style=display:grid;grid-template-columns:repeat(2,1fr);gap:10px>
+<button class=btn-action style="padding:15px 0;justify-content:center" onclick='setChar("")' title=Pac-Man>
+<i class="fas fa-ghost"></i>
+</button>
+<button class=btn-action style="padding:15px 0;justify-content:center" onclick='setChar("")' title=Ghost>
+<i class="fas fa-snapchat-ghost"></i>
+</button>
+<button class=btn-action style="padding:15px 0;justify-content:center" onclick='setChar("")' title=Skull>
+<i class="fas fa-skull"></i>
+</button>
+<button class=btn-action style="padding:15px 0;justify-content:center" onclick='setChar("")' title=Hacker>
+<i class="fas fa-user-secret"></i>
+</button>
+</div>
+<button class=reset-btn style=margin-top:15px;width:100% onclick=toggleCharMenu()>CONFIRM</button>
+</div>
+<canvas id=dinoCanvas width=280 height=150></canvas>
+<button id=startDinoBtn class=reset-btn onclick=startDino()>INITIALIZE START</button>
+</div>
+<div id=birdModal class=modal>
+<div class=modal-header>
+<span>BIRD</span><span onclick='stopAllGames(),toggleModal("birdModal")' style=cursor:pointer>[X]</span>
+</div>
+<canvas id=birdCanvas width=280 height=300></canvas><button id=startBirdBtn class=reset-btn onclick=startBird()>START</button>
+</div>
+<div id=pacmanModal class=modal>
+<div class=modal-header>
+<span>CYBER PAC-MAN</span><span onclick='stopAllGames(),toggleModal("pacmanModal")' style=cursor:pointer>[X]</span>
+</div>
+<canvas id=pacmanCanvas width=280 height=250></canvas>
+<button id=startPacmanBtn class=reset-btn onclick=startPacman()>START GAME</button>
+</div>
+<div id=sudokuModal class=modal>
+<div class=modal-header>
+<span>CYBER SUDOKU</span><span onclick='stopAllGames(),toggleModal("sudokuModal")' style=cursor:pointer>[X]</span>
+</div>
+<div id=sudokuContainer></div>
+<div id=sudokuKeypad></div>
+<button class=reset-btn onclick=initSudoku()>RESET PUZZLE</button>
+</div>
+<div id=simonModal class=modal>
+<div class=modal-header>
+<span>NEON PATTERN</span>
+<span style=cursor:pointer onclick='toggleModal("simonModal")'>X</span>
+</div>
+<div class=level-info>
+STAGE <span id=currentLevel>1</span>
+</div>
+<div id=statusSimon style=font-family:Poppins,sans-serif;font-size:.7rem;margin-bottom:15px;color:var(--text);text-align:center;min-height:20px;opacity:.8>READY TO START?</div>
+<div style=display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-bottom:20px>
+<div id=sim0 class=btn-action style="flex-direction:column;height:100px;background:var(--bg);color:var(--text);border:2px solid var(--border)" onclick=userClick(0)>
+<i class="fas fa-ghost" style=font-size:1.8rem></i>
+<div class=dot-container>
+<div id=dot0 class=dot></div>
+</div>
+</div>
+<div id=sim1 class=btn-action style="flex-direction:column;height:100px;background:var(--bg);color:var(--text);border:2px solid var(--border)" onclick=userClick(1)>
+<i class="fas fa-skull" style=font-size:1.8rem></i>
+<div class=dot-container>
+<div id=dot1 class=dot></div>
+</div>
+</div>
+<div id=sim2 class=btn-action style="flex-direction:column;height:100px;background:var(--bg);color:var(--text);border:2px solid var(--border)" onclick=userClick(2)>
+<i class="fas fa-robot" style=font-size:1.8rem></i>
+<div class=dot-container>
+<div id=dot2 class=dot></div>
+</div>
+</div>
+<div id=sim3 class=btn-action style="flex-direction:column;height:100px;background:var(--bg);color:var(--text);border:2px solid var(--border)" onclick=userClick(3)>
+<i class="fas fa-bolt" style=font-size:1.8rem></i>
+<div class=dot-container>
+<div id=dot3 class=dot></div>
+</div>
+</div>
+</div>
+<button id=startSimonBtn class=reset-btn style=width:100% onclick=startSimon()>START GAME</button>
+</div>
+<div id=burstModal class=modal style=display:none>
+<div class=modal-header>
+<span>DIGIT BURST</span>
+<span style=cursor:pointer onclick='document.getElementById("burstModal").style.display="none"'>X</span>
+</div>
+<div style="text-align:center;margin:10px 0">
+<span id=burstTimer style=font-size:1.5rem;font-weight:700>0.00s</span>
+</div>
+<div id=burstGrid class=burst-grid></div>
+<button class=reset-btn style=width:100% onclick=startBurst()>START NEW ROUND</button>
+</div>
+<div id=damModal class=modal style=display:none>
+<div class=modal-header>
+<span>STRATEGY: DAM</span>
+<span style=cursor:pointer onclick='document.getElementById("damModal").style.display="none"'>X</span>
+</div>
+<div id=statusDam style="text-align:center;margin:10px 0;font-size:.8rem;color:var(--text);font-weight:700">PLAYER 1 TURN (WHITE)</div>
+<div id=damGrid class=dam-grid></div>
+<button class=reset-btn style=width:100% onclick=initDam()>RESET BOARD</button>
+</div>
+<div id=mineModal class=modal style=display:none>
+<div class=modal-header>
+<span>MINESWEEPER REBOOT</span>
+<span style=cursor:pointer onclick='document.getElementById("mineModal").style.display="none"'>X</span>
+</div>
+<div id=statusMine style="text-align:center;margin:10px 0;font-size:.8rem;color:var(--text)">SCANNING SAFE PATH...</div>
+<div id=mineGrid class=mine-grid></div>
+<button class=reset-btn style=width:100% onclick=initMine()>NEW SCAN</button>
+</div>
+<div id=stackModal class=modal style=display:none>
+<div class=modal-header>
+<span>TOWER STACKER</span>
+<span style=cursor:pointer onclick='document.getElementById("stackModal").style.display="none"'>X</span>
+</div>
+<div class=stack-info>
+SCORE: <span id=stackScore>0</span>
+</div>
+<canvas id=stackCanvas width=300 height=400 onclick=handleStackClick()></canvas>
+<button id=stackBtn onclick=initStack()>START GAME</button>
+</div>
+<div id=storyModal class=modal>
+<div class=modal-header>
+<span>SESSION: UNKNOWN_ORIGIN</span>
+<span style=cursor:pointer onclick='tutupModal("storyModal")'>X</span>
+</div>
+<div class=chat-container>
+<div class=chat-messages id=storyFlow></div>
+<div class=chat-input-area>
+<input id=storyInput class=chat-input placeholder="Ketik jawaban..." autocomplete=off></div>
+</div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
